@@ -1,0 +1,30 @@
+{
+  "name": "customphotoframe",
+  "version": "1.0.0",
+  "description": "web application, displays pictures/videos from a folder in a grid system with different effects",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krausg/CustomPhotoFrame.git"
+  },
+  "keywords": [
+    "display",
+    "web",
+    "app",
+    "picture"
+  ],
+  "author": "krausg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krausg/CustomPhotoFrame/issues"
+  },
+  "homepage": "https://github.com/krausg/CustomPhotoFrame#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "expressjs": "^1.0.1",
+    "vue": "^2.5.16"
+  }
+}
