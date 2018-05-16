@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/krausg/CustomPhotoFrame#readme",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.3",
     "expressjs": "^1.0.1",
     "vue": "^2.5.16"
