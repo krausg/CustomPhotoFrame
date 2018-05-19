@@ -1,26 +1,27 @@
 
-// var vm = new Vue({
-//   el: '#example',
-//   data: {
-//     message: 'Hello',
-//     xsize: 12,
-//     ysize: 12
-//   },
-//   // computed: {
-//   // a computed getter
-//   // render: function (createElement) {
-//   // `this` points to the vm instance
-//   // return createElement("div",this.message)
-//   // }
-//   // },
-//   render: {
-//     gustav: function (createElement) {
-//       // `this` points to the vm instance
-//       return createElement("div", this.message)
-//     }
-//   }
+var vm = new Vue({
+  el: '#example',
+  data: {
+    message: 'Hello',
+    xsize: 12,
+    ysize: 12,
+    test: "<div>Hey</div>",
+    testdata: [
+      1, 2, 3, 4, 5
+    ]
+  },
+  computed: {
+    testdata2() {
+      return this.testdata.filter(p => p % 2 ? true : false);
+    }
+  },
+  methods: {
+    test2() {
+      return this.testdata.filter(p => p % 2 ? true : false);
+    }
+  }
 
-// })
+});
 
 // var app2 = new Vue({
 //   el: '#app-2',
@@ -46,22 +47,24 @@
 //     ]
 //   }
 // })
-import Button from '../Button.vue'
-import Vue from 'vue'
 
-var instance = new Button()
-var ComponentClass = Vue.extend(Button)
-var instance = new ComponentClass()
 
-instance.$mount() // pass nothing
-this.$refs.container.appendChild(instance.$el)
+// import Button from '../Button.vue'
+// import Vue from 'vue'
 
-Vue.component('test', {
-  props: {
-    message: Text
-  },
-  render: function (createElement) {
-    return createElement("div",this.message);
-  }
+// var instance = new Button()
+// var ComponentClass = Vue.extend(Button)
+// var instance = new ComponentClass()
 
-})
+// instance.$mount() // pass nothing
+// this.$refs.container.appendChild(instance.$el)
+
+// Vue.component('test', {
+//   props: {
+//     message: Text
+//   },
+//   render: function (createElement) {
+//     return createElement("div",this.message);
+//   }
+
+// })
