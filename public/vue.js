@@ -4,12 +4,13 @@ var buttonGrid = Vue.component('buttonGrid', {
 });
 
 
-Vue.component('grid', {
+var grid = Vue.component('grid', {
   template: `
     <div> 
       <div :style="styleObject">
         Hello <button @click="buttonPressed" > {{ currentDepth }}</button>
-        <btnGrid :style="childObject" ></btnGrid>
+        <grid v-if="currentDepth>0" :depth="currentDepth" color="blue"/>
+        <grid v-if="currentDepth>0" :depth="currentDepth" color="green"/>
       </div>
     </div>
   `,
@@ -17,17 +18,18 @@ Vue.component('grid', {
     depth: {
       default: 2,
       type: Number
+    },
+    color: {
+      type: String,
+      default: "crimson"
     }
   },
   data() {
     return {
       styleObject: {
-        width: '100%',
-        height: '100%',
-        backgroundColor: 'red'
-      },
-      childObject:{
-        backgroundColor: 'green'
+        width: '500px',
+        height: '500px',
+        backgroundColor: this.color
       }
       , currentDepth: this.depth
     }
@@ -38,13 +40,14 @@ Vue.component('grid', {
     }
   },
   components: {
-    btnGrid : buttonGrid
+    grid: grid
   },
   created() {
-    var Button = Vue.extend(buttonGrid)
-    var ButtonInstance = new Button()
-    ButtonInstance.$mount() // pass nothing
-    console.log(this.btnGrid)
+    this.currentDepth--;
+    // var Button = Vue.extend(buttonGrid)
+    // var ButtonInstance = new Button()
+    // ButtonInstance.$mount() // pass nothing
+    // console.log(this.btnGrid)
     // this.$refs.container.appendChild(btnGrid.$el)
 
     return;
