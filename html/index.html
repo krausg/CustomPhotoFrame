@@ -5,18 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="vue.css">
 </head>
 
 <body>
-    <div id="app">
-        <div-split depth=3>
-            <div slot="left-pane">omfg links</div>
-            <div slot="right-pane">omfg rechts</div>
+    <div id="app" class="box">
+        <test></test>
+
+
+        <div-split :vertical=true>
+            <div slot="left-pane">links </div>
+            <div-split slot="right-pane" :vertical=false>
+                <div slot="left-pane">rechts oben</div>
+                <div-split slot="right-pane" :vertical=true>
+                    <div slot="left-pane">rechts unten links</div>
+                    <div slot="right-pane">rechts unten rechts</div>
+                </div-split>
+            </div-split>
         </div-split>
 
     </div>
 
-    <script src="vue.js"> </script>
+    <script type="module" src="div-split.js"></script>
+    <script type="module" src="app.js" ></script>
 </body>
 
 </html>
