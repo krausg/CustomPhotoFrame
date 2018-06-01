@@ -1,9 +1,18 @@
 import divSplit from './div-split.js';
 import test from './test.js';
+import remoteImg from './image.js';
 
-var vm = new Vue({
+window.vm = new Vue({
   el: "#app",
+  data() {
+    return {
+      okay: [ "hello again","oka2y" ]
+    }
+  },
+  created() {
+
+  },
   components: {
-    divSplit, test
+    divSplit, test, remoteImg
   }
 }); 
