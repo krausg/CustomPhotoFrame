@@ -1,21 +1,19 @@
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Page Title</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-    <link rel="stylesheet" type="text/css" href="vue.css">
-</head>
+    <link rel="stylesheet" type="text/css" href="vue.css" />
+  </head>
 
-<body>
+  <body>
     <div id="app" class="box">
-        <test :oki=okay>
-            <!-- <imag slot="right-pane" :message=okwok></imag> -->
-        </test>
+      <test :oki="okay">
+        <!-- <imag slot="right-pane" :message=okwok></imag> -->
+      </test>
 
-
-        <!-- <div-split :vertical=true>
+      <!-- <div-split :vertical=true>
             <div slot="leftPane">links </div>
             <div-split slot="rightPane" :vertical=false>
                 <div slot="leftPane" >rechts oben</div>
@@ -25,11 +23,9 @@
                 </div-split>
             </div-split>
         </div-split> -->
-
     </div>
 
     <script type="module" src="div-split.js"></script>
-    <script type="module" src="app.js" ></script>
-</body>
-
+    <script type="module" src="app.js"></script>
+  </body>
 </html>

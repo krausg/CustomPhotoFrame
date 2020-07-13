@@ -1,5 +1,5 @@
 export default {
-	template: `
+  template: `
 		<div class="div-split-container">
     		<div :class="leftPaneClasses">
 				<slot name="leftPane" />
@@ -12,53 +12,46 @@ export default {
 			<slot></slot>
 		</div> 
   `,
-	props: {
-		vertical: {
-			default: true,
-			type: Boolean
-		},
-		leftSlot: {
-			default: {}
-		},
-		rightSlot: {
-			default: {}
-		}
+  props: {
+    vertical: {
+      default: true,
+      type: Boolean,
+    },
+    leftSlot: {
+      default: {},
+    },
+    rightSlot: {
+      default: {},
+    },
+  },
+  data() {
+    return {};
+  },
+  methods: {},
+  computed: {
+    leftPaneClasses() {
+      let classes = [];
+      if (this.vertical) {
+        classes.push("div-split-left");
+      }
+      return classes;
+    },
+    rightPaneClasses() {
+      let classes = [];
+      if (this.vertical) {
+        classes.push("div-split-right");
+      }
+      return classes;
+    },
+  },
+  mounted() {
+    this.leftSlot.$mount();
+    this.rightSlot.$mount();
 
-	},
-	data() {
-		return {
-		}
-	},
-	methods: {
-	},
-	computed: {
-		leftPaneClasses() {
-			let classes = [];
-			if (this.vertical) {
-				classes.push("div-split-left")
-			}
-			return classes;
-		},
-		rightPaneClasses() {
-			let classes = [];
-			if (this.vertical) {
-				classes.push("div-split-right")
-			}
-			return classes;
-		},
-
-	},
-	mounted() {
-
-		this.leftSlot.$mount();
-		this.rightSlot.$mount();
-
-		this.$refs['rightPane'].appendChild(this.rightSlot.$el);
-		this.$refs["leftPane"].appendChild(this.leftSlot.$el);
-	},
-	created() {
-		return;
-	}
-
+    this.$refs["rightPane"].appendChild(this.rightSlot.$el);
+    this.$refs["leftPane"].appendChild(this.leftSlot.$el);
+  },
+  created() {
+    return;
+  },
 };
-

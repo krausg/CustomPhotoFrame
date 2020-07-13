@@ -1,27 +1,27 @@
 .div-split-container {
-    width: 100%;
-    text-align: center;
-    font-size: 10px;
-    background-color: #ffffff;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  background-color: #ffffff;
 }
 .div-split-left {
-    float: left;
-    width: 50%;
-    background-color: #9deb9b;
+  float: left;
+  width: 50%;
+  background-color: #9deb9b;
 }
 .div-split-right {
-    float: right;
-    width: 50%;
-    background-color: rgb(93, 144, 192);
+  float: right;
+  width: 50%;
+  background-color: rgb(93, 144, 192);
 }
 .box {
-    position:fixed;
-    left:10%;
-    top:10%;
-    width:50%;
-    height:50%;
-    background-color: gray;
+  position: fixed;
+  left: 10%;
+  top: 10%;
+  width: 50%;
+  height: 50%;
+  background-color: gray;
 }
-body{
-    background-color: darkgray;
+body {
+  background-color: darkgray;
 }
